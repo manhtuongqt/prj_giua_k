@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="tuong_prj">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.00875115335701394 0.00145434175744656 0.0197970202504017"
+        rpy="0 0 0" />
+      <mass
+        value="0.247214592704957" />
+      <inertia
+        ixx="5.09846319877481E-05"
+        ixy="3.14502704634609E-10"
+        ixz="-2.29128940534497E-08"
+        iyy="0.000138337528123073"
+        iyz="6.07030102044357E-09"
+        izz="0.000156119311243302" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tuong_prj/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tuong_prj/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="camera_link">
+    <inertial>
+      <origin
+        xyz="-0.00379496123935553 -0.005 1.38777878078145E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.000861769923242049" />
+      <inertia
+        ixx="1.57870207236615E-08"
+        ixy="-1.04978172730756E-24"
+        ixz="-5.46386639801268E-24"
+        iyy="1.42276145493078E-08"
+        iyz="-5.23261755032898E-24"
+        izz="1.42276145493079E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tuong_prj/meshes/camera_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tuong_prj/meshes/camera_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_joint"
+    type="fixed">
+    <origin
+      xyz="0.0632627164776696 -0.000176806239847352 0.0175"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="camera_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="r1_link">
+    <inertial>
+      <origin
+        xyz="-1.61017610694411E-08 -9.37641352755092E-09 -0.00737298761809616"
+        rpy="0 0 0" />
+      <mass
+        value="0.166945648008939" />
+      <inertia
+        ixx="6.72956832426971E-05"
+        ixy="1.48103139716417E-09"
+        ixz="2.77332492198932E-12"
+        iyy="6.72934094491944E-05"
+        iyz="1.61142783291259E-12"
+        izz="0.000113206411587748" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tuong_prj/meshes/r1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tuong_prj/meshes/r1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r1_joint"
+    type="continuous">
+    <origin
+      xyz="0.0535 -0.0597 -0.01"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="r1_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="r2_link">
+    <inertial>
+      <origin
+        xyz="1.79692601492976E-08 4.92844177968355E-09 -0.00737298761809657"
+        rpy="0 0 0" />
+      <mass
+        value="0.166945648008928" />
+      <inertia
+        ixx="6.72962683305461E-05"
+        ixy="7.21635123749427E-10"
+        ixz="-3.0940699050529E-12"
+        iyy="6.72928243613378E-05"
+        iyz="-8.45439850234771E-13"
+        izz="0.000113206411587741" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tuong_prj/meshes/r2_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tuong_prj/meshes/r2_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r2_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0542 -0.0597 -0.01"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="r2_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="l1_link">
+    <inertial>
+      <origin
+        xyz="1.60286626341502E-08 9.50082462009005E-09 0.00737298761809532"
+        rpy="0 0 0" />
+      <mass
+        value="0.166945648008979" />
+      <inertia
+        ixx="6.72952077919434E-05"
+        ixy="1.745988953354E-09"
+        ixz="2.7576417613168E-12"
+        iyy="6.72938848999752E-05"
+        iyz="1.6381209825726E-12"
+        izz="0.000113206411587776" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tuong_prj/meshes/l1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tuong_prj/meshes/l1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l1_joint"
+    type="continuous">
+    <origin
+      xyz="0.0542 0.0597 -0.00999999999999999"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="l1_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="l2_link">
+    <inertial>
+      <origin
+        xyz="1.47071355233175E-08 1.14404548820501E-08 0.00737298761809749"
+        rpy="0 0 0" />
+      <mass
+        value="0.166945648008911" />
+      <inertia
+        ixx="6.72947513832686E-05"
+        ixy="1.85578767187576E-09"
+        ixz="2.52983122062295E-12"
+        iyy="6.72943413086046E-05"
+        iyz="1.97179646661437E-12"
+        izz="0.000113206411587729" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tuong_prj/meshes/l2_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tuong_prj/meshes/l2_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l2_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0542 0.0597 -0.01"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="l2_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="link1_link">
+    <inertial>
+      <origin
+        xyz="0.0112965074860716 0.000294106136027775 0.00809748630895654"
+        rpy="0 0 0" />
+      <mass
+        value="0.00217345004516305" />
+      <inertia
+        ixx="8.83067371714348E-08"
+        ixy="-3.18688100975201E-09"
+        ixz="1.68951341947711E-10"
+        iyy="2.10416210224296E-07"
+        iyz="7.76778484386285E-12"
+        izz="1.57614574174761E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tuong_prj/meshes/link1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tuong_prj/meshes/link1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link1_joint"
+    type="continuous">
+    <origin
+      xyz="0.0456051935827945 0.00812497585878494 0.03625"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link1_link" />
+    <axis
+      xyz="0.00243771288682845 0 0.999997028773527" />
+  </joint>
+  <link
+    name="link2_link">
+    <inertial>
+      <origin
+        xyz="0.0209468215932113 -1.00075800853749E-05 0.00607395571016221"
+        rpy="0 0 0" />
+      <mass
+        value="0.00441157829254422" />
+      <inertia
+        ixx="1.49055075416352E-07"
+        ixy="3.94714479927521E-08"
+        ixz="1.09857720468065E-09"
+        iyy="5.72380382923761E-07"
+        iyz="-9.62203433261055E-11"
+        izz="5.99710039026559E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tuong_prj/meshes/link2_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tuong_prj/meshes/link2_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link2_joint"
+    type="continuous">
+    <origin
+      xyz="0.0249981311918012 0.000651798236282433 0.00268906972328226"
+      rpy="0 0 0" />
+    <parent
+      link="link1_link" />
+    <child
+      link="link2_link" />
+    <axis
+      xyz="0.00243771288682838 0 0.999997028773527" />
+  </joint>
+  <link
+    name="lidar_link">
+    <inertial>
+      <origin
+        xyz="-0.0124775361822262 1.27378904138942E-05 -0.0236676181502307"
+        rpy="0 0 0" />
+      <mass
+        value="0.0380002378726907" />
+      <inertia
+        ixx="8.19362064344397E-06"
+        ixy="1.7203605393884E-08"
+        ixz="-2.240976969835E-06"
+        iyy="2.17926600540757E-05"
+        iyz="1.47459599019032E-09"
+        izz="2.74503938407733E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tuong_prj/meshes/lidar_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.188235294117647 0.231372549019608 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tuong_prj/meshes/lidar_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lidar_joint"
+    type="fixed">
+    <origin
+      xyz="-0.0229989584518159 0.00331756857310458 0.126319"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lidar_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+  <gazebo>
+  <plugin name="diff_drive_controller" filename="libgazebo_ros_diff_drive.so">
+	<ros>
+  	<namespace>/</namespace>
+
+  	<remap>
+    	<from>cmd_vel</from>
+    	<to>/cmd_vel</to>
+  	</remap>
+
+  	<rosDebugLevel>INFO</rosDebugLevel>
+	</ros>
+
+	<leftJoint>l1_joint</leftJoint> 
+	<leftJoint>l2_joint</leftJoint> 
+	<rightJoint>r1_joint</rightJoint> 
+	<rightJoint>r2_joint</rightJoint> 
+
+	<wheelSeparation>0.1566</wheelSeparation> 
+	<wheelDiameter>0.07</wheelDiameter>     	 
+	<wheelAcceleration>1.0</wheelAcceleration>  
+	<wheelTorque>10</wheelTorque>           	  
+
+	<commandTopic>cmd_vel</commandTopic>     
+	<odometryTopic>odom</odometryTopic>  
+	<odometryFrame>odom</odometryFrame>      
+	<robotBaseFrame>base_footprint</robotBaseFrame> 
+
+	<publishWheelTF>true</publishWheelTF>      
+	<publishOdomTF>true</publishOdomTF>          
+	<publishWheelJointState>true</publishWheelJointState> 
+	<publishTf>1</publishTf>                    
+
+	<updateRate>100</updateRate> 
+
+	<odometrySource>1</odometrySource> 
+
+	<rosDebugLevel>info</rosDebugLevel>
+
+  </plugin>
+</gazebo>
+
+
+
+<!-- Plugin Camera -->
+<gazebo reference="camera_link"> 
+  <sensor type="camera" name="camera_sensor"> 
+    
+    <update_rate>30</update_rate> 
+    
+    <camera> 
+      
+      <horizontal_fov>1.3962634</horizontal_fov>
+      
+      <image> 
+        <width>640</width> 
+        <height>480</height> 
+        <format>R8G8B8</format> 
+      </image>
+      
+    </camera> 
+    
+    <plugin name="camera_controller" filename="libgazebo_ros_camera.so"> 
+      
+      <alwaysOn>true</alwaysOn> 
+      
+      <updateRate>30.0</updateRate> 
+      
+      <cameraName>my_camera</cameraName> 
+      
+      <frameName>camera_link</frameName> 
+      
+      <imageTopicName>/camera/image_raw</imageTopicName> 
+      
+      <cameraInfoTopicName>/camera/camera_info</cameraInfoTopicName> 
+      
+    </plugin> 
+    
+    <pose>0 0 0 0 0 0</pose> 
+                                
+  </sensor> 
+</gazebo> 
+
+<transmission name="link1_joint_transmission">
+    <type>transmission_interface/SimpleTransmission</type>
+
+    <joint name="link1_joint">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+
+    <actuator name="link1_servo">
+        <mechanicalReduction>1.0</mechanicalReduction>
+    </actuator>
+</transmission>
+
+<transmission name="link2_joint_transmission">
+    <type>transmission_interface/SimpleTransmission</type>
+
+    <joint name="link2_joint">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+
+    <actuator name="link2_servo">
+        <mechanicalReduction>1.0</mechanicalReduction>
+    </actuator>
+</transmission>
+
+<gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+        <robotNamespace>/</robotNamespace>
+    </plugin>
+</gazebo>
+
+<gazebo reference="lidar_link"> <!-- Tham chiếu đến liên kết (link) có tên là "lidar_link" trong mô hình URDF/SDF -->
+   <material>Gazebo/FlatBlack</material> <!-- Thiết lập vật liệu hiển thị trong Gazebo là màu đen phẳng (FlatBlack) -->
+   
+   <sensor type="ray" name="head_rplidar_sensor"> <!-- Khai báo cảm biến loại "ray" (tia quét) với tên là "head_rplidar_sensor" -->
+      <pose>0 0 0 0 0 0</pose> <!-- Xác định vị trí và hướng của cảm biến trong hệ tọa độ của "lidar_link" (x, y, z, roll, pitch, yaw) -->
+      <visualize>true</visualize> <!-- Cho phép hiển thị cảm biến trong giao diện Gazebo -->
+      <update_rate>30.0</update_rate> <!-- Tần số cập nhật cảm biến là 30 lần mỗi giây (30 Hz) -->
+      
+      <ray> <!-- Bắt đầu cấu hình cho cảm biến tia quét -->
+         <scan> <!-- Xác định thông số quét của cảm biến -->
+            <horizontal> <!-- Cài đặt cho quét theo phương ngang -->
+               <samples>50</samples> <!-- Số lượng tia quét trong mỗi vòng quét (50 tia) -->
+               <resolution>1</resolution> <!-- Độ phân giải góc, mỗi tia quét sẽ có giá trị riêng lẻ (1: không nội suy giữa các tia) -->
+               <min_angle>0.0</min_angle> <!-- Góc quét tối thiểu theo radian (0 rad, tương ứng 0 độ) -->
+               <max_angle>6.28319</max_angle> <!-- Góc quét tối đa theo radian (~6.28319 rad, tương ứng 360 độ) -->
+            </horizontal> <!-- Kết thúc phần cấu hình quét ngang -->
+         </scan> <!-- Kết thúc phần thông số quét -->
+         
+         <range> <!-- Thiết lập phạm vi đo lường của cảm biến -->
+            <min>0.120</min> <!-- Khoảng cách đo tối thiểu là 0.12 m (12 cm) -->
+            <max>10</max> <!-- Khoảng cách đo tối đa là 10 m -->
+            <resolution>0.015</resolution> <!-- Độ phân giải của khoảng cách là 0.015 m (15 mm) -->
+         </range> <!-- Kết thúc phần thiết lập phạm vi -->
+      </ray> <!-- Kết thúc phần cấu hình cảm biến tia quét -->
+      
+      <plugin name="gazebo_ros_head_rplidar_controller" filename="libgazebo_ros_laser.so"> <!-- Khai báo plugin ROS cho cảm biến lidar -->
+         <topicName>scan</topicName> <!-- Dữ liệu quét của Lidar sẽ được xuất bản lên topic ROS có tên "scan" -->
+         <frameName>lidar_link</frameName> <!-- Tên khung tọa độ (frame) của cảm biến là "lidar_link" -->
+         <gaussianNoise>0.01</gaussianNoise> <!-- Mức độ nhiễu Gaussian (nhiễu ngẫu nhiên) là 0.01 -->
+      </plugin> <!-- Kết thúc phần cấu hình plugin ROS -->
+   </sensor> <!-- Kết thúc phần cấu hình cảm biến -->
+</gazebo> 
+</robot>

@@ -1,0 +1,43 @@
+<launch>
+  <!-- Load Gazebo World -->
+   <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find tuong_prj)/urdf/map.world"/>
+  </include>
+  <!-- Load robot_description lên parameter server -->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(find tuong_prj)/urdf/tuong_prj.urdf" />
+
+  <!-- Xuất bản TF giữa base_link và base_footprint -->
+  <node name="tf_footprint_base" pkg="tf" type="static_transform_publisher"
+        args="0 0 0 0 0 0 base_link base_footprint 40" />
+
+  <!-- Spawn robot model vào Gazebo -->
+  <node name="spawn_model" pkg="gazebo_ros" type="spawn_model"
+        args="-param robot_description -urdf -model tuong_prj" output="screen" />
+
+  <!-- Giả lập hiệu chỉnh joint (Tránh trùng lặp) -->
+  <node name="fake_joint_calibration" pkg="rostopic" type="rostopic"
+        args="pub /calibrated std_msgs/Bool true" />
+
+  <!-- Load thông số bộ điều khiển -->
+  <rosparam command="load" file="$(find tuong_prj)/config/controller.yaml" />
+
+  <!-- Giả lập hiệu chỉnh joint (ẩn danh) -->
+  <node name="$(anon fake_joint_calibration)" pkg="rostopic" type="rostopic"
+        args="pub /calibrated std_msgs/Bool true" />
+
+  <!-- Khởi động bộ điều khiển -->
+  <node name="two_dof_arm_controller_spawner" pkg="controller_manager" type="spawner"
+        args="joint_state_controller link1_joint_controller link2_joint_controller" />
+
+  <!-- Xuất bản TF của robot -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+  <!-- Khởi động GUI điều khiển khớp (nếu cần) -->
+  <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
+
+  <!-- Khởi động RViz -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find tuong_prj)/launch/rviz.rviz" />
+
+  <!-- Chạy file controller.py -->
+  <node name="controller" pkg="final_binh" type="controller.py" output="screen" />
+</launch>
